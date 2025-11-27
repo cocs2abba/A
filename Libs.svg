@@ -1,0 +1,283 @@
+<svg
+  width="320"
+  height="96"
+  viewBox="0 0 320 96"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <!-- Neon pink glow -->
+    <filter id="neon-glow">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feColorMatrix
+        in="blur"
+        type="matrix"
+        values="1 0 0 0 1
+                0 0 0 0 0
+                0 0 0 0 0.6
+                0 0 0 1 0"
+        result="pinkGlow"
+      />
+      <feMerge>
+        <feMergeNode in="pinkGlow" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Mask for subtle scanline overlay -->
+    <pattern id="scanlines" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="4" height="2" fill="rgba(255,255,255,0.02)" />
+    </pattern>
+  </defs>
+
+  <style>
+    <![CDATA[
+    :root {
+      --neon-pink: #ff2fbf;
+      --neon-pink-soft: #ff77dd;
+      --bg-dark: #050509;
+    }
+
+    .btn-bg {
+      fill: rgba(5,5,9,0.95);
+      stroke: var(--neon-pink);
+      stroke-width: 2;
+      rx: 18;
+      ry: 18;
+      filter: url(#neon-glow);
+    }
+
+    .btn-border-glow {
+      stroke: var(--neon-pink-soft);
+      stroke-width: 1.3;
+      opacity: 0.7;
+      stroke-dasharray: 8 8;
+      animation: borderDash 2.5s linear infinite;
+    }
+
+    .label,
+    .label-glitch-1,
+    .label-glitch-2 {
+      font-family: "HTW Unit Gothic", "Nimbus Sans Extd Black",
+                   "Impact", "Arial Black", system-ui, sans-serif;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      dominant-baseline: middle;
+      text-anchor: middle;
+      font-size: 18px;
+    }
+
+    .label {
+      fill: var(--neon-pink-soft);
+      paint-order: stroke;
+      stroke: var(--neon-pink);
+      stroke-width: 0.6;
+      filter: url(#neon-glow);
+    }
+
+    .label-glitch-1,
+    .label-glitch-2 {
+      mix-blend-mode: screen;
+      opacity: 0.55;
+      animation-duration: 700ms;
+      animation-timing-function: steps(1, end);
+      animation-iteration-count: infinite;
+    }
+
+    .label-glitch-1 {
+      fill: #00fff7;
+      animation-name: glitch1;
+    }
+
+    .label-glitch-2 {
+      fill: #ff0080;
+      animation-name: glitch2;
+    }
+
+    .icon,
+    .icon-glitch-1,
+    .icon-glitch-2 {
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2.4;
+    }
+
+    .icon {
+      stroke: var(--neon-pink-soft);
+      filter: url(#neon-glow);
+    }
+
+    .icon-glitch-1,
+    .icon-glitch-2 {
+      fill: none;
+      mix-blend-mode: screen;
+      opacity: 0.55;
+      animation-duration: 700ms;
+      animation-timing-function: steps(1, end);
+      animation-iteration-count: infinite;
+    }
+
+    .icon-glitch-1 {
+      stroke: #00fff7;
+      animation-name: glitch1;
+    }
+
+    .icon-glitch-2 {
+      stroke: #ff0080;
+      animation-name: glitch2;
+    }
+
+    .scanlines-overlay {
+      fill: url(#scanlines);
+      opacity: 0.4;
+      animation: scanMove 4s linear infinite;
+    }
+
+    .pulse {
+      animation: pulseGlow 1.9s ease-in-out infinite;
+    }
+
+    .noise {
+      animation: jitter 1200ms infinite steps(1,end);
+    }
+
+    /* Hover-like attention on GitHub (looping) */
+    @keyframes pulseGlow {
+      0%, 100% {
+        filter: url(#neon-glow);
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        filter: url(#neon-glow);
+        opacity: 1;
+        transform: scale(1.02);
+      }
+    }
+
+    @keyframes borderDash {
+      from {
+        stroke-dashoffset: 0;
+      }
+      to {
+        stroke-dashoffset: 32;
+      }
+    }
+
+    @keyframes glitch1 {
+      0%   { transform: translate(0,0); }
+      15%  { transform: translate(-1.5px,-1px); }
+      30%  { transform: translate(1px,1.5px); }
+      45%  { transform: translate(-1px,1px); }
+      60%  { transform: translate(1.5px,-1px); }
+      75%  { transform: translate(-0.5px,0.5px); }
+      90%  { transform: translate(0.5px,-0.5px); }
+      100% { transform: translate(0,0); }
+    }
+
+    @keyframes glitch2 {
+      0%   { transform: translate(0,0); }
+      15%  { transform: translate(1px,1px); }
+      30%  { transform: translate(-1.5px,0.5px); }
+      45%  { transform: translate(1px,-1.5px); }
+      60%  { transform: translate(-1px,-0.5px); }
+      75%  { transform: translate(0.5px,1.5px); }
+      90%  { transform: translate(-0.5px,-1px); }
+      100% { transform: translate(0,0); }
+    }
+
+    @keyframes scanMove {
+      0%   { transform: translateY(-4px); opacity: 0.2; }
+      50%  { transform: translateY(0px);   opacity: 0.4; }
+      100% { transform: translateY(4px);   opacity: 0.2; }
+    }
+
+    @keyframes jitter {
+      0%   { transform: translate(0,0); }
+      25%  { transform: translate(0.3px,-0.3px); }
+      50%  { transform: translate(-0.3px,0.3px); }
+      75%  { transform: translate(0.2px,0.1px); }
+      100% { transform: translate(0,0); }
+    }
+    ]]>
+  </style>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="320" height="96" fill="transparent" />
+
+  <!-- Main button -->
+  <g class="pulse noise">
+    <rect
+      class="btn-bg"
+      x="16"
+      y="20"
+      width="288"
+      height="56"
+    />
+    <rect
+      class="btn-border-glow"
+      x="17.5"
+      y="21.5"
+      width="285"
+      height="53"
+      rx="16"
+      ry="16"
+      fill="none"
+    />
+  </g>
+
+  <!-- Scanline overlay -->
+  <rect
+    class="scanlines-overlay"
+    x="16"
+    y="20"
+    width="288"
+    height="56"
+  />
+
+  <!-- Download icon (center-left) -->
+  <g transform="translate(90,48)">
+    <!-- Main -->
+    <g class="icon">
+      <polyline points="-2,-6 0,-6 0,10" fill="none" />
+      <polyline points="-5,5 0,10 5,5" fill="none" />
+      <rect x="-6" y="11" width="12" height="3" rx="1.5" />
+    </g>
+    <!-- Glitch layers -->
+    <g class="icon-glitch-1">
+      <polyline points="-2,-6 0,-6 0,10" fill="none" />
+      <polyline points="-5,5 0,10 5,5" fill="none" />
+      <rect x="-6" y="11" width="12" height="3" rx="1.5" />
+    </g>
+    <g class="icon-glitch-2">
+      <polyline points="-2,-6 0,-6 0,10" fill="none" />
+      <polyline points="-5,5 0,10 5,5" fill="none" />
+      <rect x="-6" y="11" width="12" height="3" rx="1.5" />
+    </g>
+  </g>
+
+  <!-- Glitch text layers -->
+  <text
+    x="190"
+    y="48"
+    class="label"
+  >
+    DOWNLOAD
+  </text>
+
+  <text
+    x="190"
+    y="48"
+    class="label-glitch-1"
+  >
+    DOWNLOAD
+  </text>
+
+  <text
+    x="190"
+    y="48"
+    class="label-glitch-2"
+  >
+    DOWNLOAD
+  </text>
+</svg>
