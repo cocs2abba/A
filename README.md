@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="N1H4D.svg" width="480" alt="N1H4D cyberpunk logo" />
+  <img src="NodeJS/cqc.svg" width="480" alt="N1H4D cyberpunk logo" />
 
   <p align="center">
   <a href="#">
-    <img src="NodeJS/cqc.svg" width="220" alt="Download Button" />
+    <img src="NodeJS/msx.svg" width="220" alt="Download Button" />
   </a>
 </p>
   
