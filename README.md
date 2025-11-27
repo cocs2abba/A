@@ -2,7 +2,7 @@
   <img src="NodeJS/cqc.svg" width="480" alt="N1H4D cyberpunk logo" />
 
   <p align="center">
-  <img src="tsx.png" width="400" alt="Billie Eilish neon art" />
+  <img src="NodeJS/tsx.png" width="400" alt="Billie Eilish neon art" />
 </p>
 
   <p align="center">
