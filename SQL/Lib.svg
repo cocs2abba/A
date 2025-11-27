@@ -1,0 +1,102 @@
+<svg width="260" height="80" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Neon Glow -->
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Glitch animation -->
+    <style>
+      @keyframes glitch {
+        0% { transform: translate(0,0); }
+        10% { transform: translate(-1px,1px); }
+        20% { transform: translate(1px,-1px); }
+        30% { transform: translate(-1px,0); }
+        40% { transform: translate(1px,0); }
+        50% { transform: translate(0,1px); }
+        60% { transform: translate(0,-1px); }
+        70% { transform: translate(-1px,1px); }
+        80% { transform: translate(1px,-1px); }
+        90% { transform: translate(1px,1px); }
+        100% { transform: translate(0,0); }
+      }
+
+      @keyframes arrowBounce {
+        0% { transform: translateY(0); }
+        40% { transform: translateY(4px); }
+        70% { transform: translateY(-2px); }
+        100% { transform: translateY(0); }
+      }
+
+      .glitchy {
+        animation: glitch 1.4s infinite steps(1);
+      }
+
+      .arrowMove {
+        animation: arrowBounce 1.4s infinite;
+        transform-origin: 190px 40px;
+      }
+    </style>
+
+    <!-- Dark cyber background -->
+    <linearGradient id="darkBG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06000A"/>
+      <stop offset="50%" stop-color="#100018"/>
+      <stop offset="100%" stop-color="#05000A"/>
+    </linearGradient>
+
+    <!-- Top glass gloss -->
+    <linearGradient id="glass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.25)"/>
+      <stop offset="50%" stop-color="rgba(255,255,255,0.05)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Neon border -->
+  <rect x="10" y="12" width="240" height="56" rx="28"
+        fill="none" stroke="#ff4fa8" stroke-width="2.5"
+        filter="url(#neonGlow)" class="glitchy"/>
+
+  <!-- Background -->
+  <rect x="10" y="12" width="240" height="56" rx="28"
+        fill="url(#darkBG)" />
+
+  <!-- Soft neon glow inside -->
+  <rect x="10" y="12" width="240" height="56" rx="28"
+        fill="#ff4fa8" opacity="0.12" class="glitchy" />
+
+  <!-- Glass shine -->
+  <rect x="10" y="12" width="240" height="56" rx="28"
+        fill="url(#glass)" />
+
+  <!-- Download text (glitchy) -->
+  <text x="40" y="44"
+        font-family="Segoe UI, Roboto, sans-serif"
+        font-size="20"
+        fill="#ffffff"
+        letter-spacing="0.15em"
+        class="glitchy"
+        dominant-baseline="middle">
+    DOWNLOAD
+  </text>
+
+  <!-- Arrow icon -->
+  <g class="arrowMove glitchy">
+    <line x1="190" y1="30" x2="190" y2="46"
+          stroke="#ff4fa8" stroke-width="3" stroke-linecap="round"
+          filter="url(#neonGlow)" />
+    <polyline points="182,40 190,48 198,40"
+              fill="none"
+              stroke="#ff4fa8"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              filter="url(#neonGlow)" />
+  </g>
+</svg>
