@@ -1,0 +1,78 @@
+<svg
+  width="480"
+  height="180"
+  viewBox="0 0 480 180"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">N1H4D cyberpunk logo</title>
+  <desc id="desc">Animated neon cyberpunk logo for N1H4D</desc>
+
+  <defs>
+    <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="50%" stop-color="#ff00ff" />
+      <stop offset="100%" stop-color="#00ff9f" />
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur">
+        <animate attributeName="stdDeviation" values="1.5;4;1.5" dur="2.2s" repeatCount="indefinite" />
+      </feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="scanlines">
+      <feTurbulence type="fractalNoise" baseFrequency="0 0.9" numOctaves="1" result="noise" />
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/>
+      <feBlend in2="SourceGraphic" mode="soft-light" />
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="480" height="180" rx="18" ry="18" fill="#050816" />
+
+  <rect
+    x="4"
+    y="4"
+    width="472"
+    height="172"
+    rx="14"
+    ry="14"
+    fill="none"
+    stroke="url(#neonGradient)"
+    stroke-width="2"
+  >
+    <animate attributeName="stroke-dasharray" values="4 10;10 4;4 10" dur="6s" repeatCount="indefinite" />
+    <animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite" />
+  </rect>
+
+  <g filter="url(#glow)" text-anchor="middle" dominant-baseline="central" font-family="monospace" font-weight="700" font-size="72">
+    <text x="50%" y="54%" fill="#00f0ff" opacity="0.9">
+      <animate attributeName="x" values="50%;51%;49%;50%" dur="0.4s" repeatCount="indefinite" />
+      N1H4D
+    </text>
+    <text x="50%" y="54%" fill="#ff00ff" opacity="0.7">
+      <animate attributeName="x" values="50%;49%;51%;50%" dur="0.4s" repeatCount="indefinite" begin="0.05s" />
+      N1H4D
+    </text>
+  </g>
+
+  <g text-anchor="middle" dominant-baseline="central" font-family="monospace" font-weight="700" font-size="72" filter="url(#scanlines)">
+    <text x="50%" y="54%" fill="url(#neonGradient)" stroke="#ffffff" stroke-width="1">
+      <animate attributeName="letter-spacing" values="0;8;0" dur="3s" repeatCount="indefinite" />
+      N1H4D
+    </text>
+  </g>
+
+  <text x="50%" y="78%" text-anchor="middle" fill="#7bfffc" font-family="monospace" font-size="12" letter-spacing="6">
+    <tspan opacity="0.7">
+      <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3.4s" repeatCount="indefinite" />
+      CYBERPUNK • CODE
+    </tspan>
+  </text>
+</svg>
