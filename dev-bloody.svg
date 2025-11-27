@@ -1,0 +1,120 @@
+<svg
+  width="600"
+  height="180"
+  viewBox="0 0 600 180"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Developer : N1H4D Bloody Logo</title>
+  <desc id="desc">Animated bloody horror style logo for Developer : N1H4D</desc>
+
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#050505" />
+      <stop offset="100%" stop-color="#150000" />
+    </linearGradient>
+
+    <linearGradient id="bloodGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff1a1a" />
+      <stop offset="40%" stop-color="#c40000" />
+      <stop offset="100%" stop-color="#3b0000" />
+    </linearGradient>
+
+    <filter id="bloodGlow">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="180" fill="url(#bgGrad)" />
+
+  <!-- Top red bar like smeared blood -->
+  <rect x="0" y="40" width="600" height="70" fill="#2a0000" opacity="0.9" />
+
+  <!-- Text -->
+  <g
+    filter="url(#bloodGlow)"
+    font-family="Impact, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+    text-anchor="middle"
+    dominant-baseline="middle"
+  >
+    <text
+      x="50%"
+      y="90"
+      font-size="40"
+      fill="url(#bloodGrad)"
+      stroke="#000000"
+      stroke-width="1.5"
+      letter-spacing="3"
+    >
+      <tspan>
+        Developer : N1H4D
+      </tspan>
+      <animate
+        attributeName="letter-spacing"
+        values="3;6;3"
+        dur="2.6s"
+        repeatCount="indefinite"
+      />
+    </text>
+  </g>
+
+  <!-- Dripping blood drops -->
+  <g fill="url(#bloodGrad)">
+    <!-- Left drip -->
+    <path id="drip1" d="M120 110 Q115 130 122 150 Q128 130 124 110 Z">
+      <animate
+        attributeName="d"
+        dur="1.8s"
+        repeatCount="indefinite"
+        values="
+          M120 110 Q115 130 122 150 Q128 130 124 110 Z;
+          M120 110 Q115 140 122 165 Q128 140 124 110 Z;
+          M120 110 Q115 130 122 150 Q128 130 124 110 Z"
+      />
+    </path>
+
+    <!-- Middle drip -->
+    <path id="drip2" d="M300 110 Q295 135 302 160 Q308 135 304 110 Z">
+      <animate
+        attributeName="d"
+        dur="2.1s"
+        begin="0.3s"
+        repeatCount="indefinite"
+        values="
+          M300 110 Q295 135 302 160 Q308 135 304 110 Z;
+          M300 110 Q295 145 302 175 Q308 145 304 110 Z;
+          M300 110 Q295 135 302 160 Q308 135 304 110 Z"
+      />
+    </path>
+
+    <!-- Right drip -->
+    <path id="drip3" d="M470 110 Q465 132 472 155 Q478 132 474 110 Z">
+      <animate
+        attributeName="d"
+        dur="1.6s"
+        begin="0.6s"
+        repeatCount="indefinite"
+        values="
+          M470 110 Q465 132 472 155 Q478 132 474 110 Z;
+          M470 110 Q465 142 472 170 Q478 142 474 110 Z;
+          M470 110 Q465 132 472 155 Q478 132 474 110 Z"
+      />
+    </path>
+  </g>
+
+  <!-- Flicker overlay -->
+  <rect x="0" y="0" width="600" height="180" fill="#ff0000" opacity="0">
+    <animate
+      attributeName="opacity"
+      values="0;0;0.18;0;0.08;0"
+      dur="3.5s"
+      repeatCount="indefinite"
+    />
+  </rect>
+</svg>
