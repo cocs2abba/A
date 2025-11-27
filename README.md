@@ -14,24 +14,9 @@
     <img src="SQL/Lib.svg" alt="Download" />
   </a>
 </p>
- 🟩 Features Section
-
-You can show these as small cards or icons:
-
-🔮 Pure 4K Quality
-Crisp, high-resolution wallpapers that stay sharp on any screen.
-
-🌙 Dark & Neon Aesthetic
-Designed for setups with RGB, neon pink, and Billie-style vibes.
-
-🖥 Desktop-Ready
-Optimized for Windows, macOS, and Linux desktops.
-
-📁 Easy Download
-One-click downloads with organized packs and categories.
-
-🎧 Fan-Made by N1H4D
-Curated by a Billie Eilish fan, for Billie Eilish fans.
+<p align="center">
+  <img src="SQL/tsb.svg" alt="Features" />
+</p>
 <p align="center">
   <img src="SQL/Zrc.jpg" width="400" alt="Billie Eilish neon art" />
 </p>
