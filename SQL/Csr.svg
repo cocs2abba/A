@@ -1,0 +1,92 @@
+<svg width="100%" height="580" viewBox="0 0 1800 580" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <!-- Dark Billie Eilish Background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#010a05"/>
+      <stop offset="50%" stop-color="#041e12"/>
+      <stop offset="100%" stop-color="#000603"/>
+    </linearGradient>
+
+    <!-- Neon Glow -->
+    <filter id="neonGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Billie Green Gradient -->
+    <linearGradient id="billieGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7cff6b"/>
+      <stop offset="50%" stop-color="#00ff88"/>
+      <stop offset="100%" stop-color="#7cff6b"/>
+    </linearGradient>
+
+    <!-- Fonts + animation -->
+    <style>
+      @keyframes pulse {
+        0%   { opacity: 0.85; }
+        50%  { opacity: 1; }
+        100% { opacity: 0.85; }
+      }
+
+      .title {
+        font-family: "Segoe UI", sans-serif;
+        font-size: 50px;
+        font-weight: 800;
+        fill: url(#billieGreen);
+        letter-spacing: 2px;
+      }
+
+      .feature {
+        font-family: "Segoe UI", sans-serif;
+        font-size: 30px;
+        fill: #caffdd;
+        font-weight: 500;
+      }
+
+      .glow {
+        filter: url(#neonGlow);
+        animation: pulse 3s infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1800" height="580" fill="url(#bg)" />
+
+  <!-- Content Group -->
+  <g class="glow">
+
+    <!-- Title -->
+    <text x="50%" y="90" text-anchor="middle" class="title">
+      🟩 Features Section
+    </text>
+
+    <!-- Features List -->
+    <text x="150" y="180" class="feature">
+      🔮 Pure 4K Quality — Crisp, high-resolution wallpapers that stay sharp on any screen.
+    </text>
+
+    <text x="150" y="250" class="feature">
+      🌙 Dark & Neon Aesthetic — Designed for RGB setups and Billie-style moods.
+    </text>
+
+    <text x="150" y="320" class="feature">
+      🖥 Desktop-Ready — Optimized for Windows, macOS, and Linux displays.
+    </text>
+
+    <text x="150" y="390" class="feature">
+      📁 Easy Download — Simple one-click access with clean categories.
+    </text>
+
+    <text x="150" y="460" class="feature">
+      🎧 Fan-Made by N1H4D — Curated with love for true Billie Eilish fans.
+    </text>
+
+  </g>
+
+</svg>
