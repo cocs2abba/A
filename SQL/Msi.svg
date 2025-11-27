@@ -1,0 +1,104 @@
+<svg width="100%" height="420" viewBox="0 0 2000 420" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <!-- Outer neon glow -->
+    <filter id="outerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="34" result="bigglow"/>
+      <feMerge>
+        <feMergeNode in="bigglow"/>
+        <feMergeNode in="bigglow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Mid glow -->
+    <filter id="midGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="16" result="midglow"/>
+      <feMerge>
+        <feMergeNode in="midglow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Inner glow -->
+    <filter id="innerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="innerglow"/>
+      <feMerge>
+        <feMergeNode in="innerglow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Neon pink color tube -->
+    <linearGradient id="neonPink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffb3e9"/>
+      <stop offset="50%" stop-color="#ff4fa8"/>
+      <stop offset="100%" stop-color="#ffb3e9"/>
+    </linearGradient>
+
+    <!-- Flicker animation -->
+    <style>
+      @keyframes flicker {
+        0% { opacity: 1; }
+        4% { opacity: .45; }
+        7% { opacity: 1; }
+        8% { opacity: .25; }
+        10% { opacity: 1; }
+        13% { opacity: .65; }
+        16% { opacity: 1; }
+        18% { opacity: .3; }
+        22% { opacity: 1; }
+        100% { opacity: 1; }
+      }
+
+      .script {
+        font-family: "Pacifico", "Great Vibes", "Brush Script MT", cursive;
+        font-size: 130px;
+        font-weight: 300;
+      }
+
+      .flicker {
+        animation: flicker 2.9s infinite;
+      }
+    </style>
+
+  </defs>
+
+  <!-- NO BACKGROUND HERE — FULLY TRANSPARENT -->
+
+  <!-- Outer glow -->
+  <text x="50%" y="40%" text-anchor="middle"
+    class="script flicker"
+    fill="none" stroke="#ff1a9e" stroke-width="40"
+    stroke-linecap="round" stroke-linejoin="round"
+    filter="url(#outerGlow)">
+    Billie Eilish 4k Desktop Wallpapers
+  </text>
+
+  <!-- Mid glow -->
+  <text x="50%" y="40%" text-anchor="middle"
+    class="script flicker"
+    fill="none" stroke="#ff4fa8" stroke-width="20"
+    stroke-linecap="round" stroke-linejoin="round"
+    filter="url(#midGlow)">
+    Billie Eilish 4k Desktop Wallpapers
+  </text>
+
+  <!-- Neon tube -->
+  <text x="50%" y="40%" text-anchor="middle"
+    class="script flicker"
+    fill="none" stroke="url(#neonPink)" stroke-width="10"
+    stroke-linecap="round" stroke-linejoin="round"
+    filter="url(#innerGlow)">
+    Billie Eilish 4k Desktop Wallpapers
+  </text>
+
+  <!-- White hot core -->
+  <text x="50%" y="40%" text-anchor="middle"
+    class="script flicker"
+    fill="none" stroke="#ffffff" stroke-width="4"
+    stroke-linecap="round" stroke-linejoin="round">
+    Billie Eilish 4k Desktop Wallpapers
+  </text>
+
+</svg>
