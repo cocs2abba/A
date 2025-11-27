@@ -11,16 +11,14 @@
       <stop offset="0%" stop-color="#020617"/>
       <stop offset="50%" stop-color="#020024"/>
       <stop offset="100%" stop-color="#0f172a"/>
-    </linearGradient>
-
-    <!-- Neon text gradient -->
+      </linearGradient>
+<!-- Neon text gradient -->
     <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#22d3ee"/>
       <stop offset="50%" stop-color="#a855f7"/>
       <stop offset="100%" stop-color="#f97316"/>
     </linearGradient>
-
-    <!-- Glow filter -->
+ <!-- Glow filter -->
     <filter id="neonGlow">
       <feGaussianBlur stdDeviation="4" result="blur" />
       <feColorMatrix in="blur" type="matrix"
@@ -33,8 +31,7 @@
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
-
-    <!-- Scanline mask -->
+<!-- Scanline mask -->
     <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
       <rect x="0" y="0" width="4" height="2" fill="#000000" opacity="0.4" />
       <rect x="0" y="2" width="4" height="2" fill="#000000" opacity="0" />
