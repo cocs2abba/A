@@ -7,7 +7,7 @@
 
   <p align="center">
   <a href="#">
-    <img src="SQL/Lib.svg" width="300" alt="Download Button" />
+    <img src="SQL/Libs.svg" width="300" alt="Download Button" />
   </a>
 </p>
   
