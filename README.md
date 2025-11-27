@@ -1,4 +1,4 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/cocs2abba/A/Logo1.jpg -->
+<!-- Improved compatibility of back to top link: See: https://github.com/cocs2abba/A/Logo1.svg -->
 <a id="readme-top"></a>
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
